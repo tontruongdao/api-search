@@ -19,6 +19,9 @@ const fetchData = async (term) => {
 
     // Extra step to convert response to JSON format
     const JSON = result.json();
+    // const url = result.url;
+
+    // console.log(url);
     // console.log(`Promise received is: ${JSON}`);
     return JSON;
 }

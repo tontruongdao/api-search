@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-import SearchBar from './SearchBar';
 import fetchData from '../helpers/api'
+import SearchBar from './SearchBar';
+import Images from './Images';
 
 const App = () => {
 
@@ -11,7 +12,7 @@ const App = () => {
     // ##### Helper functions #####
     const onSearchSubmit = (term) => {
 
-        console.log(term);
+        // console.log(term);
         fetchData(term)
             .then(json => {
                 // console.log(json.results);
@@ -19,14 +20,16 @@ const App = () => {
             })
     }
 
-    console.log(`The images state is currently ${images}`);
+    // console.log(`The images state is currently ${images}`);
 
     return (
         <div>
             <SearchBar
                 onSubmit={onSearchSubmit}
             />
-            Found: {images.length} images
+            <Images            
+                images={images}
+            />
         </div>
     )
 }
