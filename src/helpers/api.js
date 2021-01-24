@@ -12,13 +12,14 @@ const fetchData = async (term) => {
 
     // By default, fetch uses the method "Get"
     const result = await fetch(`https://api.unsplash.com/search/photos?query=${term}`, {
-                headers: {
-                    Authorization:`Client-ID ${API_KEY}`
-                }
-    })
+                        headers: {
+                            Authorization:`Client-ID ${API_KEY}`
+                        }
+                    })
 
     // Extra step to convert response to JSON format
     const JSON = result.json();
+    // console.log(`Promise received is: ${JSON}`);
     return JSON;
 }
 
