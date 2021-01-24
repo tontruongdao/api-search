@@ -1,12 +1,16 @@
 import React from 'react';
 
 import SearchBar from './SearchBar';
+import fetchData from '../helpers/api'
 
 const App = () => {
 
     // ##### Helper functions #####
     const onSearchSubmit = (term) => {
+
         console.log(term);
+        fetchData(term)
+        
     }
 
 
